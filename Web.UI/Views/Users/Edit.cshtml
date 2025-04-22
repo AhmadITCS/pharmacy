@@ -1,0 +1,159 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Infrastructure.DTO.UserDTO;
+<html>
+<head>
+
+</head>
+<body>
+    <div class="content-wrapper">
+        <!-- Content -->
+
+        <div class="container-xxl flex-grow-1 container-p-y">
+            <h4 class="fw-bold py-3 mb-4">Create New User</h4>
+
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="card-body">
+                            <form asp-action="UpdateUser">
+                                @Html.AntiForgeryToken()
+
+                                <div class="row">
+                                     
+                                    <div class="col-md-4">
+
+                                        First Name
+                                        <span class="text-danger">*</span>
+                                        <input type="text" asp-for="FirstName" class="form-control" maxlength="50" />
+                                        <span asp-validation-for="FirstName" class="text-danger"></span>
+
+
+                                    </div>
+                                    <div class="col-md-4">
+
+                                        Last Name
+                                        <span class="text-danger">*</span>
+                                        <input type="text" asp-for="LastName" class="form-control" maxlength="50" />
+                                        <span asp-validation-for="LastName" class="text-danger"></span>
+
+                                    </div>
+                                    <div class="col-md-4">
+
+                                        Date Of Birth
+                                        <span class="text-danger">*</span>
+                                        <input type="date" asp-for="DateOfBirth" class="form-control" />
+                                        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+
+                                        Email
+                                        <span class="text-danger">*</span>
+                                        <input type="text" asp-for="Email" class="form-control" maxlength="50" />
+                                        <span asp-validation-for="Email" class="text-danger"></span>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        mobile
+                                        <span class="text-danger">*</span>
+                                        <input type="text" asp-for="MobileNumber" class="form-control" maxlength="10" />
+                                        <span asp-validation-for="MobileNumber" class="text-danger"></span>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        Gender
+                                        <span class="text-danger">*</span>
+                                        <input type="radio" class="custom-checkbox" asp-for="Gender" name="Gender" value="false" />Male
+                                        <input type="radio" class="custom-checkbox" asp-for="Gender" name="Gender" value="true" />Fmale
+                                        <span asp-validation-for="Gender" class="text-danger"></span>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        Address
+                                        <span class="text-danger">*</span>
+                                        <input type="text" asp-for="Address" class="form-control" maxlength="50" />
+                                        <span asp-validation-for="Address" class="text-danger"></span>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        ShaftType
+                                        <span class="text-danger">*</span>
+                                        <select class="form-control" asp-for="ShiftType">
+                                            <option value="" selected="selected">plase slect</option>
+                                            <option value="false">Shaft A</option>
+                                            <option value="true">Shaft B</option>
+
+                                        </select>
+                                        <span asp-validation-for="ShiftType" class="text-danger"></span>
+
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        Salary
+                                        <span class="text-danger">*</span>
+                                        <input type="text" class="from-control" asp-for="Salary" />
+                                        <span asp-validation-for="Salary" class="text-danger"></span>
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        Jope Descrption
+
+                                        <select class="form-control" asp-for="JobDescriptionId" asp-items="@(new SelectList(ViewBag.JobeDescription ,"Id","Name"))">
+                                            <option value="" selected="selected">plase slect</option>
+
+
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        Join Date
+                                        <span class="text-danger">*</span>
+                                        <input type="date" class=" form-control" asp-for="JoinDate" />
+                                        <span asp-validation-for="JoinDate" class="text-danger"></span>
+
+                                    </div>
+
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <input type="hidden" asp-for="UserId" />
+
+                                        <input type="submit" class="btn btn-primary" value="Save" />
+                                    </div>
+
+                                </div>
+
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+@section Scripts {
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+</html>

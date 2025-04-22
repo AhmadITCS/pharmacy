@@ -1,0 +1,33 @@
+﻿
+    .dropdown-item{
+
+
+    display: block;
+    width: 100%;
+    padding: 0.532rem 1.25rem;
+    clear: both;
+    font-weight: 400;
+    color: red;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+.css-menu{
+    padding:10px;
+    position:relative;
+    min-width:185px;
+}
+    .css-menu:hover {
+        color: white;
+        background: #233446;
+        font-size:16px;
+        position: relative;
+    }
+    .custamadd:hover{
+        text-decoration:underline;
+    }
+        .dropdown-item:hover, .dropdown-item:focus {
+            color: white;
+            background-color: #233446;
+        }
